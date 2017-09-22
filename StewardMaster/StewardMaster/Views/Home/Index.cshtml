@@ -1,0 +1,92 @@
+﻿@model StewardMaster.Models.StewardEnquiryModel
+
+@{
+    ViewBag.Title = "Steward Calculator";
+}
+
+<h2>Steward Calculator</h2>
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.NumberOfTickets, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NumberOfTickets, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NumberOfTickets, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h3>Contract Staff</h3>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ContractS1Count)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContractS1Count)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ContractS3Count)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContractS3Count)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <h3>Additional to Contract</h3>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NonContractS1Count)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NonContractS1Count)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NonContractS3Count)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NonContractS3Count)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <h3>Total Staff</h3>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalS1Count)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TotalS1Count)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalS3Count)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TotalS3Count)
+            </dd>
+        </dl>
+    </div>
+</div>

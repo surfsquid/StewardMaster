@@ -1,0 +1,36 @@
+﻿@model IEnumerable<StewardMaster.Models.LogEntryModel>
+
+@{
+    ViewBag.Title = "Audit";
+}
+
+<h2>Audit</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfTickets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestDateTime)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfTickets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestDateTime)
+        </td>
+    </tr>
+}
+
+</table>
